@@ -40,18 +40,6 @@ DROP TABLE IF EXISTS declinaison_velo;
         FOREIGN KEY (type_velo_id) REFERENCES type_velo(id_type_velo)
     );
 
-    CREATE TABLE declinaison_velo (
-        id_declinaison INT PRIMARY KEY AUTO_INCREMENT,
-        velo_id INT NOT NULL,
-        couleur_id INT NOT NULL,
-        taille_id INT NOT NULL,
-        stock INT NOT NULL DEFAULT 0,
-        FOREIGN KEY (velo_id) REFERENCES velo(id_velo),
-        FOREIGN KEY (couleur_id) REFERENCES couleur(id_couleur),
-        FOREIGN KEY (taille_id) REFERENCES taille(id_taille),
-        UNIQUE KEY unique_declinaison (velo_id, couleur_id, taille_id)
-    );
-
     CREATE TABLE utilisateur(
     id_utilisateur INT AUTO_INCREMENT,
     login VARCHAR(255),
